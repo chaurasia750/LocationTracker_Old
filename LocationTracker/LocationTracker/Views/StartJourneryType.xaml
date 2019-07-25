@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"  BackgroundColor="#FFFFFF"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:vm="clr-namespace:LocationTracker.ViewModels"
+             x:Class="LocationTracker.Pages.StartJourneryType">
+    <ContentPage.BindingContext>
+        <vm:StartJourneryTypeViewModel x:Name="vmJourneyType" />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Frame CornerRadius="15" Margin="5,10,5,15" HasShadow="True" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" IsClippedToBounds="True"  x:Name="MainFrame">
+                <Grid HorizontalOptions="CenterAndExpand"  >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        
+                    
+                    <StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Button WidthRequest="250" HeightRequest="60" CornerRadius="15" FontSize="15" Text="Daily Up Down"   BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab"
+                                      TranslationY="5" x:Name="TourButton" Command="{Binding JourneyTypeCommand}" CommandParameter="1" />
+                    </StackLayout>
+                    <StackLayout  VerticalOptions="CenterAndExpand" Margin="0,20,0,0" HorizontalOptions="CenterAndExpand">
+                        <Button WidthRequest="250" HeightRequest="60" CornerRadius="15" FontSize="15" Text="Camp"  BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab"
+                                Command="{Binding JourneyTypeCommand}" CommandParameter="2"  TranslationY="5" />
+                    </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

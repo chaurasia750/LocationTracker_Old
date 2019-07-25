@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocationTracker.HomePage"
+             BackgroundColor="#FFFFFF"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Frame CornerRadius="15" Margin="10,10,10,15" HasShadow="True" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" IsClippedToBounds="True" x:Name="MainFrame">
+                <Grid HorizontalOptions="CenterAndExpand" Margin="10,10,10,10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Vertical" Spacing="0" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label Text="Home" TextColor="#1C405B" FontSize="25"  FontFamily="RobotoSlab-Bold.ttf#Roboto Slab"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <ScrollView Grid.Row="1" Grid.Column="0">
+                        <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Tour Program" TextColor="#1C405B" FontSize="13"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="TourLabel"/>
+                            <Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="Tour Program"  BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab"
+                                    Clicked="TourButton_Clicked"  TranslationY="5" x:Name="TourButton"/>
+                            
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Start New Journey?" TextColor="#1C405B" FontSize="13"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="StartNewJourneyLabel"/>
+                            <Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="New Journey"  BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" Clicked="NewJourneyButton_Clicked"  TranslationY="5" x:Name="NewJourneyButton"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Add Place or Bill?" TextColor="#1C405B" FontSize="13"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="AddCheckpointLabel"/>
+                            <Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="Check-In" BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" x:Name="AddCheckpointButton" Clicked="AddCheckpointButton_Clicked"  TranslationY="5"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Add Transportation?" TextColor="#1C405B" FontSize="13"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="AddBillLabel"/>
+                            <Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="Mode of Transportation" BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" x:Name="AddBillButton" Clicked="AddBillButton_Clicked"  TranslationY="5"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="End This Journey?" TextColor="#1C405B" FontSize="13"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="EndJourneyLabel"/>
+                            <Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="End Journey" BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" x:Name="EndJourneyButton" Clicked="EndJourneyButton_Clicked"  TranslationY="5"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Log Out?" TextColor="#1C405B" FontSize="13"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" x:Name="LogOutLabel"/>
+                            <Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="Log Out" BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" x:Name="LogOutButton" Clicked="LogOutButton_Clicked"/>
+
+                        </StackLayout>
+                    </ScrollView>
+                    <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Button BorderColor="#1C405B" BorderWidth="1"  WidthRequest="250" CornerRadius="25" FontSize="15" Text="View Profile"  BackgroundColor="#FFFFFF" TextColor="#1C405B" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" x:Name="AccountButton" Clicked ="AccountButton_Clicked"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <ContentView x:Name="LoadingOverlay"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All"
+                 IsVisible="False"
+                 BackgroundColor="#FFFFFF">
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator  Scale="2" Color="#1C405B" IsRunning="True" x:Name="LoadingIndicator"/>
+                    <Label Text="Loading..." TranslationY="25" TextColor="#1C405B" x:Name="LoadingIndicatorText" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="20"/>
+                </StackLayout>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

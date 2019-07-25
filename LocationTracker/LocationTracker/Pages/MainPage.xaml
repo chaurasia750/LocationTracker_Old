@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LocationTracker"
+             x:Class="LocationTracker.MainPage"
+             BackgroundColor="#FFFFFF"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
+             >
+
+    <Frame CornerRadius="15" Margin="10,10,10,15" HasShadow="True">
+        <Grid HorizontalOptions="CenterAndExpand" Margin="5,10,5,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Orientation="Vertical" Spacing="0" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Vertical" Spacing="5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TranslationY="10">
+
+                    <Image Source="Stalker.png" HeightRequest="100"/>
+                    <Label Text="NSSO" TextColor="#1C405B" FontSize="35"  FontFamily="RobotoSlab-Bold.ttf#Roboto Slab"/>
+                    <Label HorizontalTextAlignment="Center" Text="Tour" TextColor="#1C405B" FontSize="25"  FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" TranslationY="-10"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label Text="Version: 12.5.9" TextColor="#1C405B" FontSize="12"  FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                <Label Text="Already a user?" TextColor="#1C405B" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                <Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="Log In" BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" x:Name="SignInButton" Clicked="SignInButton_Clicked" TranslationY="5"/>
+            </StackLayout>
+        </Grid>
+    </Frame>
+
+</ContentPage>

@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Behaviors="clr-namespace:LocationTracker.Behaviors"
+             xmlns:Validators="clr-namespace:LocationTracker.Validators.Implementations"
+             x:Class="LocationTracker.CreateTour"
+             BackgroundColor="#FFFFFF"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Frame CornerRadius="15" Margin="10,10,10,15" HasShadow="True" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" IsClippedToBounds="True" x:Name="MainFrame">
+                <Grid HorizontalOptions="CenterAndExpand" Margin="10,10,10,10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Vertical" Spacing="0" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label Text="Create Tour Program" TextColor="#1C405B" FontSize="20"  FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <ScrollView Grid.Row="1" Grid.Column="0" Padding="10">
+                        <StackLayout Orientation="Vertical" Spacing="3" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand">
+                            <StackLayout.Behaviors>
+                                <Behaviors:ValidationGroupBehavior x:Name="form"/>
+                            </StackLayout.Behaviors>
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Scheme:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="SchemeLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="SchemeEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"
+                                     MaxLength="25">
+                                <Entry.Behaviors>
+                                    <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                        <Behaviors:ValidationBehavior.Validators>
+                                            <Validators:RequiredValidator />
+                                        </Behaviors:ValidationBehavior.Validators>
+                                    </Behaviors:ValidationBehavior>
+                                </Entry.Behaviors>
+                            </Entry>
+
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Sample/Quotation No.:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="QuotLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="QuotEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"  
+                                   MaxLength="25">
+                                <Entry.Behaviors>
+                                    <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                        <Behaviors:ValidationBehavior.Validators>
+                                            <Validators:RequiredValidator />
+                                        </Behaviors:ValidationBehavior.Validators>
+                                    </Behaviors:ValidationBehavior>
+                                </Entry.Behaviors>
+                            </Entry>
+
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Sample Village/Town -IV Unit/Block/Quotation:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="VillageLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="VillageEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" 
+                                   MaxLength="25">
+                                <Entry.Behaviors>
+                                    <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                        <Behaviors:ValidationBehavior.Validators>
+                                            <Validators:RequiredValidator />
+                                        </Behaviors:ValidationBehavior.Validators>
+                                    </Behaviors:ValidationBehavior>
+                                </Entry.Behaviors>
+                            </Entry>
+
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Sample Village/Town Population:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="PopulationLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="PopulationEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"   MaxLength="25">
+                                <Entry.Behaviors>
+                                    <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                        <Behaviors:ValidationBehavior.Validators>
+                                            <Validators:RequiredValidator />
+                                        </Behaviors:ValidationBehavior.Validators>
+                                    </Behaviors:ValidationBehavior>
+                                </Entry.Behaviors>
+                            </Entry>
+
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Tehsil:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="TehsilLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="TehsilEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"   MaxLength="25" >
+                                <Entry.Behaviors>
+                                    <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                        <Behaviors:ValidationBehavior.Validators>
+                                            <Validators:RequiredValidator />
+                                        </Behaviors:ValidationBehavior.Validators>
+                                    </Behaviors:ValidationBehavior>
+                                </Entry.Behaviors>
+                            </Entry>
+
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="District:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="DistrictLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="DistrictEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"   MaxLength="25">
+                                <Entry.Behaviors>
+                                    <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                        <Behaviors:ValidationBehavior.Validators>
+                                            <Validators:RequiredValidator />
+                                        </Behaviors:ValidationBehavior.Validators>
+                                    </Behaviors:ValidationBehavior>
+                                </Entry.Behaviors>
+                            </Entry>
+
+                            <StackLayout x:Name="OnWardJourneyDepatureStack">
+                                <Label Text="Onward Journey Departure" TextColor="#1C405B" FontSize="14"  FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" TranslationX="5"/>
+                                <StackLayout>
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Field Work Start Date:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="StartDateLabel"/>
+                                    <DatePicker WidthRequest="250" x:Name="startDatePicker" TextColor="#1C405B" MinimumDate="01/01/2000" MaximumDate="01/01/2050"/>
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Field Work Start Time:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="StartTimeLabel"/>
+                                    <TimePicker WidthRequest="250" x:Name="startTimePicker" TextColor="#1C405B" />
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Journey From:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="journeyFromEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"
+                                     MaxLength="25">
+                                        <Entry.Behaviors>
+                                            <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                                <Behaviors:ValidationBehavior.Validators>
+                                                    <Validators:RequiredValidator />
+                                                </Behaviors:ValidationBehavior.Validators>
+                                            </Behaviors:ValidationBehavior>
+                                        </Entry.Behaviors>
+                                    </Entry>
+
+
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Field Work End Date:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="EndDateLabel"/>
+                                    <DatePicker WidthRequest="250" x:Name="endDatePicker" TextColor="#1C405B" MinimumDate="01/01/2000" MaximumDate="01/01/2050"/>
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Field Work End Time:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="EndTimeLabel"/>
+                                    <TimePicker WidthRequest="250" x:Name="endTimePicker" TextColor="#1C405B"/>
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Journey To:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="journeyToEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"
+                                     MaxLength="25">
+                                    <Entry.Behaviors>
+                                        <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                            <Behaviors:ValidationBehavior.Validators>
+                                                <Validators:RequiredValidator />
+                                            </Behaviors:ValidationBehavior.Validators>
+                                        </Behaviors:ValidationBehavior>
+                                    </Entry.Behaviors>
+                                    </Entry>
+
+
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Mode of Journey:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="modeOfJourneyEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"
+                                     MaxLength="25">
+                                        <Entry.Behaviors>
+                                            <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                                <Behaviors:ValidationBehavior.Validators>
+                                                    <Validators:RequiredValidator />
+                                                </Behaviors:ValidationBehavior.Validators>
+                                            </Behaviors:ValidationBehavior>
+                                        </Entry.Behaviors>
+                                    </Entry>
+                                    
+
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Distance:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="distanceEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"
+                                     MaxLength="25">
+                                        <Entry.Behaviors>
+                                            <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                                <Behaviors:ValidationBehavior.Validators>
+                                                    <Validators:RequiredValidator />
+                                                </Behaviors:ValidationBehavior.Validators>
+                                            </Behaviors:ValidationBehavior>
+                                        </Entry.Behaviors>
+                                    </Entry>
+
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Fare:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="fareEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"
+                                     MaxLength="25">
+                                        <Entry.Behaviors>
+                                            <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                                <Behaviors:ValidationBehavior.Validators>
+                                                    <Validators:RequiredValidator />
+                                                </Behaviors:ValidationBehavior.Validators>
+                                            </Behaviors:ValidationBehavior>
+                                        </Entry.Behaviors>
+                                    </Entry>
+
+
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout x:Name="BackWardJourneyDepatureStack">
+                                <Label Text="Backward Journey Departure" TextColor="#1C405B" FontSize="14"  FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" TranslationX="5"/>
+                                <StackLayout>
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Field Work Start Date:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <DatePicker WidthRequest="250" x:Name="backWardStartDatePicker" TextColor="#1C405B" MinimumDate="01/01/2000" MaximumDate="01/01/2050"/>
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Field Work Start Time:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <TimePicker WidthRequest="250" x:Name="backWardStartTimePicker" TextColor="#1C405B" />
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Journey From:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="backWardJourneyFromEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"
+                                     MaxLength="25">
+                                        <Entry.Behaviors>
+                                            <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                                <Behaviors:ValidationBehavior.Validators>
+                                                    <Validators:RequiredValidator />
+                                                </Behaviors:ValidationBehavior.Validators>
+                                            </Behaviors:ValidationBehavior>
+                                        </Entry.Behaviors>
+                                    </Entry>
+
+
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Field Work End Date:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <DatePicker WidthRequest="250" x:Name="backWardEndDatePicker" TextColor="#1C405B" MinimumDate="01/01/2000" MaximumDate="01/01/2050"/>
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Field Work End Time:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <TimePicker WidthRequest="250" x:Name="backWardEndTimePicker" TextColor="#1C405B"/>
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Journey To:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="backWardJourneyToEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"
+                                     MaxLength="25">
+                                        <Entry.Behaviors>
+                                            <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                                <Behaviors:ValidationBehavior.Validators>
+                                                    <Validators:RequiredValidator />
+                                                </Behaviors:ValidationBehavior.Validators>
+                                            </Behaviors:ValidationBehavior>
+                                        </Entry.Behaviors>
+                                    </Entry>
+
+
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Mode of Journey:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="backWardModeOfJourneyEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"
+                                     MaxLength="25">
+                                        <Entry.Behaviors>
+                                            <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                                <Behaviors:ValidationBehavior.Validators>
+                                                    <Validators:RequiredValidator />
+                                                </Behaviors:ValidationBehavior.Validators>
+                                            </Behaviors:ValidationBehavior>
+                                        </Entry.Behaviors>
+                                    </Entry>
+
+
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Distance:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="backWardDistanceEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"
+                                     MaxLength="25">
+                                        <Entry.Behaviors>
+                                            <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                                <Behaviors:ValidationBehavior.Validators>
+                                                    <Validators:RequiredValidator />
+                                                </Behaviors:ValidationBehavior.Validators>
+                                            </Behaviors:ValidationBehavior>
+                                        </Entry.Behaviors>
+                                    </Entry>
+
+
+                                    <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                                    <Label Text="Fare:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" />
+                                    <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="backWardFareEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"
+                                     MaxLength="25">
+                                        <Entry.Behaviors>
+                                            <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                                <Behaviors:ValidationBehavior.Validators>
+                                                    <Validators:RequiredValidator />
+                                                </Behaviors:ValidationBehavior.Validators>
+                                            </Behaviors:ValidationBehavior>
+                                        </Entry.Behaviors>
+                                    </Entry>
+
+
+                                </StackLayout>
+                            </StackLayout>
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="SSO/JSO/FO/FI Name:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="JSOLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="JSOEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"   MaxLength="30">
+                                <Entry.Behaviors>
+                                    <Behaviors:ValidationBehavior Group="{x:Reference form}" 
+                                              PropertyName="Text">
+                                        <Behaviors:ValidationBehavior.Validators>
+                                            <Validators:RequiredValidator />
+                                        </Behaviors:ValidationBehavior.Validators>
+                                    </Behaviors:ValidationBehavior>
+                                </Entry.Behaviors>
+                            </Entry>
+
+
+
+
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Inspecting Name of SSO (Optional):" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="ssoLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="ssoEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"   MaxLength="30"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Camp Address With Contact (Optional):" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="campAddressEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"   MaxLength="30"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Remarks (Optional):" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="rtLabel"/>
+                            <Editor WidthRequest="250" AutoSize="TextChanges" TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="RemarksEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"   MaxLength="250"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                        </StackLayout>
+
+                    </ScrollView>
+                    <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="True">
+                        <Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="Next" BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab"
+                                x:Name="ConfirmButton" Clicked="ConfirmButton_Clicked"   IsEnabled="{Binding Source={x:Reference form}, Path=IsValid}"  />
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <ContentView x:Name="LoadingOverlay"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All"
+                 IsVisible="False"
+                 BackgroundColor="#FFFFFF">
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator  Scale="2" Color="#1C405B" IsRunning="True" x:Name="LoadingIndicator"/>
+                    <Label Text="Loading..." TranslationY="25" TextColor="#1C405B" x:Name="LoadingIndicatorText" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="20"/>
+                </StackLayout>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

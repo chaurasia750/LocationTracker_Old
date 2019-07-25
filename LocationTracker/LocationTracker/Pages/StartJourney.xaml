@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocationTracker.StartJourney"
+             BackgroundColor="#FFFFFF"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Frame CornerRadius="15" Margin="10,10,10,15" HasShadow="True" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" IsClippedToBounds="True" x:Name="MainFrame">
+                <Grid HorizontalOptions="CenterAndExpand" Margin="10,10,10,10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Vertical" Spacing="0" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label Text="Start New Journey" TextColor="#1C405B" FontSize="20"  FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                        <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                        <Label Text="Current Location Latitute:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="LatitudeLabel"/>
+                        <!--<Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="New Journey"  BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" Clicked="NewJourneyButton_Clicked"  TranslationY="5" x:Name="NewJourneyButton"/>-->
+
+                        <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                        <Label Text="Current Location Longitude:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="LongitudeLabel"/>
+                        <!--<Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="Add Checkpoint" BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" x:Name="AddCheckpointButton" Clicked="AddCheckpointButton_Clicked"  TranslationY="5"/>-->
+
+                        <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                        <Label Text="Current Location Details: " TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="LocationDetailsLabel"/>
+                        <!--<Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="Add Bill" BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" x:Name="AddBillButton" Clicked="AddBillButton_Clicked"  TranslationY="5"/>-->
+
+                        <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                        <Label Text="Current Place Name (Optional): " TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="PlaceLabel"/>
+                        <Entry WidthRequest="250" Placeholder="Place Name" TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="PlaceEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25"/>
+
+                        <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                        <Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="Next" BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" x:Name="NextButton" Clicked="NextButton_Clicked"  TranslationY="5"/>
+                        
+                        <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                        <Label Text="Get Current Location!" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="GetLocationLabel" IsVisible="False"/>
+                        <Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="Get Current Location" BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" x:Name="GetLocationButton" Clicked="GetLocationButton_Clicked"  TranslationY="5" IsVisible="False"/>
+
+                    </StackLayout>
+                    <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="True">
+                        <Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="Start Journey" BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" x:Name="ConfirmButton" Clicked="ConfirmButton_Clicked"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <ContentView x:Name="LoadingOverlay"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All"
+                 IsVisible="False"
+                 BackgroundColor="#FFFFFF">
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator  Scale="2" Color="#1C405B" IsRunning="True" x:Name="LoadingIndicator"/>
+                    <Label Text="Loading..." TranslationY="25" TextColor="#1C405B" x:Name="LoadingIndicatorText" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="20"/>
+                </StackLayout>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

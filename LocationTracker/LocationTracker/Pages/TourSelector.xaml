@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocationTracker.TourSelector"
+             BackgroundColor="#FFFFFF"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Frame CornerRadius="15" Margin="10,10,10,15" HasShadow="True" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" IsClippedToBounds="True" x:Name="MainFrame">
+                <Grid HorizontalOptions="CenterAndExpand" Margin="10,10,10,10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Vertical" Spacing="0" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label Text="Tour Programs" TextColor="#1C405B" FontSize="20"  FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <ScrollView Grid.Row="1" Grid.Column="0">
+                        <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Create New Tour Program" TextColor="#1C405B" FontSize="13"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="StartNewJourneyLabel"/>
+                            <Button WidthRequest="250" CornerRadius="25" FontSize="13" Text="Create Tour Program"  BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" Clicked="NewTourButton_Clicked"  TranslationY="5" x:Name="NewTourButton"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Edit/Upload Un-Uploaded Tour Programs" TextColor="#1C405B" FontSize="13"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" x:Name="EditLabel"/>
+                            <Button WidthRequest="250" CornerRadius="25" FontSize="13" Text="Edit Tour Program"  BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" Clicked="EditTourButton_Clicked"  x:Name="EditTourButton"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Approved Tour Programs" TextColor="#1C405B" FontSize="13"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" x:Name="ApprovedLabel"/>
+                            <Button WidthRequest="250" CornerRadius="25" FontSize="13" Text="Approved Tour Programs"  BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" Clicked="ApprovedTourButton_Clicked"  x:Name="ApprovedTourButton"/>
+                            
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Rejected Tour Programs" TextColor="#1C405B" FontSize="13"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" x:Name="RejectedLabel"/>
+                            <Button WidthRequest="250" CornerRadius="25" FontSize="13" Text="Rejected Tour Programs"  BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" Clicked="RejectedTourButton_Clicked"  x:Name="RejectedTourButton"/>
+                            
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Pending For Approval" TextColor="#1C405B" FontSize="13"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" x:Name="PendingLabel"/>
+                            <Button WidthRequest="250" CornerRadius="25" FontSize="13" Text="Pending For Approval"  BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab"
+                                    Clicked="PendingTourButton_Clicked"  x:Name="PendingTourButton"/>
+
+                        </StackLayout>
+                    </ScrollView>
+                    <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="True">
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <ContentView x:Name="LoadingOverlay"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All"
+                 IsVisible="False"
+                 BackgroundColor="#FFFFFF">
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator  Scale="2" Color="#1C405B" IsRunning="True" x:Name="LoadingIndicator"/>
+                    <Label Text="Loading..." TranslationY="25" TextColor="#1C405B" x:Name="LoadingIndicatorText" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="20"/>
+                </StackLayout>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocationTracker.DisplayTour"
+             BackgroundColor="#FFFFFF"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Frame CornerRadius="15" Margin="10,10,10,15" HasShadow="True" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" IsClippedToBounds="True" x:Name="MainFrame">
+                <Grid HorizontalOptions="CenterAndExpand" Margin="10,10,10,10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Vertical" Spacing="0" Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand">
+                        <StackLayout Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Label Text="Tour Program Details" TextColor="#1C405B" FontSize="20"  FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <ScrollView Grid.Row="1" Grid.Column="0" Padding="10">
+                        <StackLayout Orientation="Vertical" Spacing="3" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Tour Status:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="statusLabel" HorizontalTextAlignment="Center"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Scheme:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="SchemeLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="SchemeEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Sample/Quotation No.:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="QuotLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="QuotEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Sample Village/Town -IV Unit/Block/Quotation:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="VillageLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="VillageEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Sample Village/ Town Population:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="PopulationLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="PopulationEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Tehsil:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="TehsilLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="TehsilEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="District:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="DistrictLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="DistrictEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Field Work Start Date and Time:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="StartDateLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="startDateTimeEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Field Work End Date and Time:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="EndDateLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="endDateTimeEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="DA Recommendation by incharge:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="DAInchargeLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="DAInchargeEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="DA Approved by R.O.:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="DAApprovedLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="DAApprovedeEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="SSO/JSO/FO/FI Name:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="JSOLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="JSOEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="30" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Distance from Residence:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="DistResiLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="DistResiEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Distance from Office:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="DistOfficLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="DistOffiEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Travel Description - Mode of Transportation:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="TravelDescLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="TravelDescEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="30" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Travel Description - Fare:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="TravelFareLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="TravelFareEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="25" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Inspection Date/Name of SSO:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="InspectionDatLabel"/>
+                            <Entry WidthRequest="250" Placeholder=""  TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="ssoEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="30" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Remarks:" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="rtLabel"/>
+                            <Editor WidthRequest="250" AutoSize="TextChanges" TextColor="#1C405B" PlaceholderColor="LightGray" x:Name="RemarksEntry" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" Margin="0,0,0,10"  MaxLength="250" IsEnabled="False"/>
+
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                            <Label Text="Edit This Tour Program" TextColor="#1C405B" FontSize="15"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5" x:Name="editLabel" IsVisible="False"/>
+                            <Button WidthRequest="250" CornerRadius="25" FontSize="15" Text="Edit" BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" x:Name="SaveButton" Clicked="SaveButton_Clicked" IsVisible="False"/>
+                            
+                            <Label Text="New user?" TextColor="Transparent" FontSize="12"  FontFamily="RobotoSlab-Light.ttf#Roboto Slab" TranslationX="5"/>
+                        </StackLayout>
+
+                    </ScrollView>
+                    <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="True">
+                        <Button BorderColor="#1C405B" BorderWidth="1"  WidthRequest="100" CornerRadius="25" FontSize="15" Text="&lt;"  BackgroundColor="#FFFFFF" 
+                                TextColor="#1C405B" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" x:Name="BackButton" IsEnabled="True" Clicked="BackButton_Clicked"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <ContentView x:Name="LoadingOverlay"
+                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                 AbsoluteLayout.LayoutFlags="All"
+                 IsVisible="False"
+                 BackgroundColor="#FFFFFF">
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator  Scale="2" Color="#1C405B" IsRunning="True" x:Name="LoadingIndicator"/>
+                    <Label Text="Loading..." TranslationY="25" TextColor="#1C405B" x:Name="LoadingIndicatorText" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" FontSize="20"/>
+                </StackLayout>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

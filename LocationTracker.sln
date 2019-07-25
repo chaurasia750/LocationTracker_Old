@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationTracker.Android", "LocationTracker\LocationTracker.Android\LocationTracker.Android.csproj", "{45239F0B-423E-4CE3-81D4-DEABA81FE45D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationTracker", "LocationTracker\LocationTracker\LocationTracker.csproj", "{61F024D7-38AE-46F1-8A9F-95308AEEA9CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45239F0B-423E-4CE3-81D4-DEABA81FE45D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45239F0B-423E-4CE3-81D4-DEABA81FE45D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45239F0B-423E-4CE3-81D4-DEABA81FE45D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{45239F0B-423E-4CE3-81D4-DEABA81FE45D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45239F0B-423E-4CE3-81D4-DEABA81FE45D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45239F0B-423E-4CE3-81D4-DEABA81FE45D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{61F024D7-38AE-46F1-8A9F-95308AEEA9CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61F024D7-38AE-46F1-8A9F-95308AEEA9CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61F024D7-38AE-46F1-8A9F-95308AEEA9CB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{61F024D7-38AE-46F1-8A9F-95308AEEA9CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61F024D7-38AE-46F1-8A9F-95308AEEA9CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61F024D7-38AE-46F1-8A9F-95308AEEA9CB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B4B4AA3-5479-45AA-A732-06C2D9D5113A}
+	EndGlobalSection
+EndGlobal

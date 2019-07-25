@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:vm="clr-namespace:LocationTracker.ViewModels"
+             x:Class="LocationTracker.Views.PopupPage.RemarksPopupPage">
+    <pages:PopupPage.BindingContext>
+        <vm:RemarksPopupPageViewModel />
+    </pages:PopupPage.BindingContext>
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="EntryStyle" TargetType="Editor">
+                <Setter Property="PlaceholderColor" Value="#9cdaf1"/>
+                <Setter Property="TextColor" Value="#7dbbe6"/>
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+      PositionIn="Bottom"
+      PositionOut="Center"
+      ScaleIn="1"
+      ScaleOut="0.7"
+      DurationIn="700"
+      EasingIn="BounceOut"/>
+    </pages:PopupPage.Animation>
+    <ScrollView
+    HorizontalOptions="Center"
+    VerticalOptions="Center">
+        <AbsoluteLayout>
+            <Frame
+        x:Name="FrameContainer"
+        Margin="15"
+        HorizontalOptions="Center"
+        BackgroundColor="White">
+                <StackLayout
+            IsClippedToBounds="True"
+            Padding="10, 5"
+            Spacing="3">
+                    <Editor WidthRequest="200" Placeholder="Enter remarks" Text="{Binding RemarksModel.Remarks}" HeightRequest='80' />
+                    <Button TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab"
+            Margin="10, 5" Command="{Binding SaveRemarksCommand}"
+            BackgroundColor="#1C405B"
+            HorizontalOptions="Fill"
+            Text="Save" />
+                </StackLayout>
+            </Frame>
+            
+        </AbsoluteLayout>
+    </ScrollView>
+</pages:PopupPage>

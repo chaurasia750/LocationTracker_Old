@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               BackgroundColor="#FFFFFF"
+             NavigationPage.HasNavigationBar="False" x:Name="journeryStartPage"
+             xmlns:vm="clr-namespace:LocationTracker.ViewModels"
+             
+             x:Class="LocationTracker.Pages.DailyUpDownPage">
+    <ContentPage.BindingContext>
+        <vm:DailyUpDownPageViewModel x:Name="vmDailyupDown" />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Frame CornerRadius="15" Margin="5,10,5,15" HasShadow="True" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" IsClippedToBounds="True"  x:Name="MainFrame">
+                <Grid HorizontalOptions="CenterAndExpand"  >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Margin="-10,0,-10,0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Grid.Row="0">
+                        <ListView  ItemsSource="{Binding TourDays}" SelectedItem="SelectedDay"  SelectionMode="Single"  SeparatorVisibility="Default" HasUnevenRows="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell IsEnabled="{Binding IsActive}">
+                                        <Grid HeightRequest="60" VerticalOptions="CenterAndExpand">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width=".5*" />
+                                                    <ColumnDefinition Width=".5*" />
+                                                </Grid.ColumnDefinitions>
+
+                                            <StackLayout Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                <Button Text="{Binding Text}" WidthRequest="100" HeightRequest="40" CornerRadius="10" FontSize="15" 
+                                                        CommandParameter="{Binding .}"
+                                                        Command="{Binding DaysCommand}"  BackgroundColor="#1C405B"
+                                                        TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" />
+                                            </StackLayout>
+                                            <StackLayout Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                <Button Text="Remarks"  WidthRequest="100" HeightRequest="40" CornerRadius="10" FontSize="15"  HorizontalOptions="CenterAndExpand"
+                                                        CommandParameter="{Binding .}" 
+                                                        Command="{Binding RemakrsCommand}"
+                                                        BackgroundColor="#1C405B" TextColor="#FFFFFF" FontFamily="RobotoSlab-Bold.ttf#Roboto Slab" />
+                                            </StackLayout>
+
+                                            <Grid.Triggers>
+                                                <DataTrigger TargetType="Grid" Binding="{Binding IsActive}" Value="true">
+                                                    <Setter Property="BackgroundColor" Value="#1C405B"/>
+                                                </DataTrigger>
+                                            </Grid.Triggers>
+                                            
+                                         </Grid>
+
+                                     </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+
+                </Grid>
+            </Frame>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

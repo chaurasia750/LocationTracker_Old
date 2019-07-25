@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LocationTracker.Pages.ShowJourneyList"
+              BackgroundColor="#FFFFFF"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:vm="clr-namespace:LocationTracker.ViewModels" 
+             xmlns:control="clr-namespace:LocationTracker.Controls">
+    <ContentPage.BindingContext>
+        <vm:ShowJourneyListViewModel x:Name="showJouneyVm"></vm:ShowJourneyListViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Frame CornerRadius="15" Margin="5,10,5,15" HasShadow="True" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" IsClippedToBounds="True"  x:Name="MainFrame">
+                <Grid HorizontalOptions="CenterAndExpand"  >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <StackLayout Grid.Row="0">
+                        <ListView SelectedItem="{Binding ActiveTour}" ItemsSource="{Binding TourList}"  SeparatorVisibility="Default" HasUnevenRows="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HeightRequest="60">
+                                            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                                <Label Text="Tour Start Date" FontFamily="RobotoSlab-Light.ttf#Roboto Slab" />
+                                                <Label Text="{Binding OwnwardStartDateTime}" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab" />
+                                            </StackLayout>
+                                            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                                <Label Text="Tour End Date" FontFamily="RobotoSlab-Light.ttf#Roboto Slab"/>
+                                                <Label Text="{Binding OwnwardEndDateTime}" FontFamily="RobotoSlab-Regular.ttf#Roboto Slab"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            <control:LoadingIndicator IsVisible="{Binding IsBusy}" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
